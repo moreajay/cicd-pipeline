@@ -8,10 +8,18 @@ pipeline {
 
    stages {
 
-      stage('Checkout Code) {
+      stage('Clone repo') {
         steps {
-          echo "pulling todo list project from github...."
-          checkout scm
+          git url: 'https://github.com/moreajay/cicd-pipeline.git'
+           }
+       }
+
+      stage('Docker login') {
+        steps {
+          withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+             sh echo $PASS | docker login -u $USER --password-stdin
+              
+               }
            }
        }
      
