@@ -1,7 +1,7 @@
 pipeline {
    agent any
 
-   environmnet {
+   environment {
      
      DOCKER_IMAGE = "morehub/todo-list-app"
    }
