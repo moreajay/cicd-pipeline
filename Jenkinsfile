@@ -1,6 +1,11 @@
 pipeline {
    agent any
 
+   tools {
+
+        nodejs "NodeJS"
+      }
+
    environment {
      
      DOCKER_IMAGE = "morehub/todo-list-app"
