@@ -10,7 +10,8 @@ pipeline {
 
       stage('Clone repo') {
         steps {
-          git url: 'https://github.com/moreajay/cicd-pipeline.git'
+          git branch: 'main',
+            git url: 'https://github.com/moreajay/cicd-pipeline.git'
            }
        }
 
