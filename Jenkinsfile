@@ -51,6 +51,7 @@ pipeline {
      stage('Deploy to kubernets') {
         steps {
            echo "Deploying to kubernets...."
+           withCredentials([file(credentialsId: 'test-kind', variable: 'KUBECONFIG')]) {
            sh '''
              
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/config-map.yaml
@@ -62,7 +63,8 @@ pipeline {
           '''
              }
          }
-      }
+       }
+     } 
       
       post {
           success {
