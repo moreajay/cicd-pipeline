@@ -17,32 +17,32 @@ pipeline {
       stage('Docker login') {
         steps {
           withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-             sh echo $PASS | docker login -u $USER --password-stdin
+             sh 'echo $PASS | docker login -u $USER --password-stdin'
               
                }
            }
        }
      
-     stage('Install dependencies')
+     stage('Install dependencies') {
         steps {
            echo "Installing Node.js dependencies...."
            sh 'npm install'
              }
        }
 
-     stage('Build docker image')
+     stage('Build docker image') {
         steps {
            echo "Building docker image...."
            sh 'docker build -t $DOCKER_IMAGE:latest .'
              }
        }
-     stage('Push docker image')
+     stage('Push docker image') {
         steps {
            echo "Pushing image into docker hub...."
            sh 'docker push $'
              }
        }
-     stage('Deploy to kubernets')
+     stage('Deploy to kubernets') {
         steps {
            echo "Deploying to kubernets...."
            sh '''
@@ -56,7 +56,7 @@ pipeline {
           '''
              }
          }
-      }
+      
       
       post {
           success {
