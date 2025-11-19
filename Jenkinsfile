@@ -8,7 +8,7 @@ pipeline {
 
    environment {
      
-     DOCKER_IMAGE = "morehub/todo-list-app"
+     DOCKER_IMAGE = "morehub/todo-list-app:V1"
    }
 
    stages {
@@ -39,7 +39,7 @@ pipeline {
      stage('Build docker image') {
         steps {
            echo "Building docker image...."
-           sh 'docker build -t $DOCKER_IMAGE:latest .'
+           sh 'docker build -t $DOCKER_IMAGE:V1 .'
              }
        }
      stage('Push docker image') {
