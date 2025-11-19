@@ -18,7 +18,7 @@ async function initializeDatabase() {
     `;
     try {
         await db.query(createTableQuery);
-        console.log('✅ Table "todos" is ready.');
+        console.log('Table "todos" is ready.');
     } catch (err) {
         console.error('Error creating table:', err.message);
         process.exit(1); // Stop app if DB setup fails
@@ -30,7 +30,7 @@ async function initializeDatabase() {
     await initializeDatabase();
 
     app.listen(PORT, () => {
-        console.log(`🚀 Server running at http://localhost:${PORT}`);
+        console.log(`Server running at http://localhost:${PORT}`);
     });
 })();
 
