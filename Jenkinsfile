@@ -8,7 +8,7 @@ pipeline {
 
    environment {
      
-     DOCKER_IMAGE = "morehub/todo-list-app:V1"
+     DOCKER_IMAGE = "morehub/todo-list-app"
    }
 
    stages {
