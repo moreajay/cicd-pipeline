@@ -39,7 +39,7 @@ pipeline {
      stage('Build docker image') {
         steps {
            echo "Building docker image...."
-           sh 'docker build -t $DOCKER_IMAGE:V1 .'
+           sh 'docker build -t $DOCKER_IMAGE:V2 .'
              }
        }
      stage('Push docker image') {
