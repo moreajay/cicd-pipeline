@@ -45,7 +45,7 @@ pipeline {
      stage('Push docker image') {
         steps {
            echo "Pushing image into docker hub...."
-           sh 'docker push $DOCKER_IMAGE:V1'
+           sh 'docker push $DOCKER_IMAGE:V2'
              }
        }
      stage('Deploy to kubernets') {
