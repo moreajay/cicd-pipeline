@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-list-app
-        image: morehub/todo-list-app:V4
+        image: morehub/todo-list-app:V5
         envFrom: 
          - configMapRef:
              name: todo-config
