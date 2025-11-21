@@ -39,13 +39,13 @@ pipeline {
      stage('Build docker image') {
         steps {
            echo "Building docker image...."
-           sh 'docker build -t $DOCKER_IMAGE:V3 .'
+           sh 'docker build -t $DOCKER_IMAGE:V4 .'
              }
        }
      stage('Push docker image') {
         steps {
            echo "Pushing image into docker hub...."
-           sh 'docker push $DOCKER_IMAGE:V3'
+           sh 'docker push $DOCKER_IMAGE:V4'
              }
        }
      stage('Deploy to kubernets') {
