@@ -54,12 +54,12 @@ pipeline {
            withCredentials([file(credentialsId: 'test-kind', variable: 'KUBECONFIG')]) {
            sh '''
              
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/config-map.yaml
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/secret.yaml || true
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql-pv.yaml
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql-pvc.yaml
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql.yaml
-              kubectl --kubeconfig=$KUBECONFIG apply -f k8s/todo-list.yaml
+              kubectl apply -f k8s/config-map.yaml
+              kubectl apply -f k8s/secret.yaml || true
+              kubectl apply -f k8s/mysql-pv.yaml
+              kubectl apply -f k8s/mysql-pvc.yaml
+              kubectl apply -f k8s/mysql.yaml
+              kubectl apply -f k8s/todo-list.yaml
           '''
              }
          }
