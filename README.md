@@ -1,18 +1,22 @@
 # TODO-LIST APPLICATION 
 ## Project Overview 
 This project demonstrates a real-world DevOps implementation of a Todo List application built using Node.js and MySQL, deployed through a fully automated CI/CD pipeline.
+The application follows containerized deployment and Kubernetes-based orchestration practices.
+## Key Implementations
 - Backend development using Node.js
 - Database integration using MYSQL
 - Containerization using Docker
 - Orchestration using Kubernets
 - CICD using Jenkins
 - Automatic build trigger using Github Webhooks
+- Persistent storage using Kubernetes PV & PVC
 ## Tech Stack
 ### Frontend & Backend 
 - Node.js
 - MYSQL
 ### DevOps Tools
 - Docker
+- DockerHub (Image Registry)
 - Kubernets
 - Jenkins
 - Github
