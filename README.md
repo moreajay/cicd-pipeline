@@ -32,3 +32,8 @@ The application follows containerized deployment and Kubernetes-based orchestrat
 ## Access Application 
    Using NodePort:
    `http://<NodeIP>:<NodePort>`
+## Jenkins Pipeline Execution
+<p align="center">
+<img width="800"  text-align: center alt="CICD output" src="https://github.com/user-attachments/assets/7aa697f1-058a-4d90-97f8-95b68f9a06cb" />
+</p>
+
