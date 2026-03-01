@@ -34,6 +34,16 @@ The application follows containerized deployment and Kubernetes-based orchestrat
    `http://<NodeIP>:<NodePort>`
 ## Jenkins Pipeline Execution
 <p align="center">
-<img width="800"  text-align: center alt="CICD output" src="https://github.com/user-attachments/assets/7aa697f1-058a-4d90-97f8-95b68f9a06cb" />
+   <img width="800"  text-align: center alt="cicd output" src="https://github.com/user-attachments/assets/7aa697f1-058a-4d90-97f8-95b68f9a06cb" />
+</p>
+
+## Kubernets Resource Status Overview
+<p align="center">
+   <img width="800" alt="kubernets output" src="https://github.com/user-attachments/assets/08d76962-67f3-4743-a161-0c2ac1b9e59d" />
+</p>  
+
+## Application After CI/CD Deployment
+<p align="center">
+   <img width="800" alt="application output" src="https://github.com/user-attachments/assets/86be2c47-5c13-4e74-9ba9-caff5d965d9c" />
 </p>
 
