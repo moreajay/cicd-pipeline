@@ -47,3 +47,23 @@ The application follows containerized deployment and Kubernetes-based orchestrat
    <img width="800" alt="application output" src="https://github.com/user-attachments/assets/86be2c47-5c13-4e74-9ba9-caff5d965d9c" />
 </p>
 
+## Jenkins Pipeline Execution Log
+  Automated Trigger via GitHub Webhook
+  <p align="center">
+    <img width="800" alt="github trigger output" src="https://github.com/user-attachments/assets/fe2936ac-8d04-4804-9b44-781f5732c030" />  
+  </p>
+
+## GitHub Webhook Status
+   GitHub Webhook Delivery Confirmation and Trigger Status
+     <p align="center">
+       <img width="800" alt="git webhook status" src="https://github.com/user-attachments/assets/4810cf9b-c2d4-4971-9034-6b335e56898f" />
+     </p>
+
+## Application Deployment
+   Auto triggered via webhook
+     <p align="center">
+
+     </p>
+   
+
+
