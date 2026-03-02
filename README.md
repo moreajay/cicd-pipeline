@@ -62,7 +62,7 @@ The application follows containerized deployment and Kubernetes-based orchestrat
 ## Application Deployment
    Auto triggered via webhook
      <p align="center">
-
+        <img width="800" alt="final application output" src="https://github.com/user-attachments/assets/09eb2521-5a25-4d33-bf7d-bfa7d551eff8" />
      </p>
    
 
