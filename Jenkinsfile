@@ -54,7 +54,7 @@ pipeline {
         steps {
            echo "Deploying to kubernets...."
            withCredentials([file(credentialsId: 'test-kind', variable: 'KUBECONFIG')]) {
-           sh '''
+           sh """
                 
               kubectl apply -f k8s/config-map.yaml
               kubectl apply -f k8s/secret.yaml || true
@@ -62,9 +62,8 @@ pipeline {
               kubectl apply -f k8s/mysql-pvc.yaml
               kubectl apply -f k8s/mysql.yaml
               kubectl apply -f k8s/todo-list.yaml
-
               kubectl set image deployment/todo-list-app todo-list-app=${env.IMAGE_TAG}
-          '''
+          """
              }
          }
        }
