@@ -9,6 +9,7 @@ pipeline {
    environment {
      
      DOCKER_IMAGE = "morehub/todo-list-app"
+     IMAGE_TAG    = "${DOCKER_IMAGE}:${BUILD_NUMBER}"
    }
 
    stages {
@@ -39,13 +40,14 @@ pipeline {
      stage('Build docker image') {
         steps {
            echo "Building docker image...."
-           sh 'docker build -t $DOCKER_IMAGE:V5 .'
+           sh "docker build -t ${env.IMAGE_TAG} ."
+               
              }
        }
      stage('Push docker image') {
         steps {
            echo "Pushing image into docker hub...."
-           sh 'docker push $DOCKER_IMAGE:V5'
+           sh "docker push ${env.IMAGE_TAG}"
              }
        }
      stage('Deploy to kubernets') {
@@ -53,13 +55,15 @@ pipeline {
            echo "Deploying to kubernets...."
            withCredentials([file(credentialsId: 'test-kind', variable: 'KUBECONFIG')]) {
            sh '''
-             
+                
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/config-map.yaml
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/secret.yaml || true
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql-pv.yaml
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql-pvc.yaml
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/mysql.yaml
               kubectl --kubeconfig=$KUBECONFIG apply -f k8s/todo-list.yaml
+
+              kubectl set image deployment/todo-list-app todo-list-app=${env.IMAGE_TAG}
           '''
              }
          }
